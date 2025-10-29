@@ -1,4 +1,4 @@
-version: '3.9'
+version: "3.9"
 
 services:
   llm_server:
@@ -9,13 +9,16 @@ services:
     networks:
       - ai_lab_net
   verifier:
-    image: python:3.10
+    build: .
+    container_name: ai_literacy_lab_verifier
     working_dir: /app
     volumes:
-      - ../sandbox:/app/sandbox
+      - ../sandbox:/app/sandbox:ro
     depends_on:
       - llm_server
-    command: ["pytest", "-q"]
+    environment:
+      - LLM_URL=http://llm_server:8080/completion
+    command: ["python", "-m", "pytest", "sandbox"]
     networks:
       - ai_lab_net
 

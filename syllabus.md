@@ -1,7 +1,7 @@
 # AI Literacy Lab — Course Syllabus
 
 ## Overview
-This syllabus outlines the progression from theory to reproducible audit.  
+This syllabus outlines the progression from theory to reproducible audit.
 Estimated total duration: 6–8 hours of guided study.
 
 | Module | Title | Focus | Est. Time |
@@ -18,10 +18,10 @@ Estimated total duration: 6–8 hours of guided study.
 
 ## Learning Outcomes
 By the end, learners will be able to:
-1. Describe why LLMs optimize for plausibility, not truth.  
-2. Construct falsifiable prompts and measure hallucination rates.  
-3. Verify AI claims using offline, reproducible workflows.  
-4. Articulate ethical limits of AI epistemic reliability.  
+1. Describe why LLMs optimize for plausibility, not truth.
+2. Construct falsifiable prompts and measure hallucination rates.
+3. Verify AI claims using offline, reproducible workflows.
+4. Articulate ethical limits of AI epistemic reliability.
 5. Contribute new demos that maintain reproducibility guarantees.
 
 ⸻
