@@ -1,0 +1,20 @@
+name: Verify Sandbox Demos
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Build environment
+        run: |
+          cd 00_Environment_Setup
+          docker-compose build
+      - name: Run verification suite
+        run: |
+          cd 00_Environment_Setup
+          docker-compose up --abort-on-container-exit --exit-code-from verifier

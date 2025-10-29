@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  llm_server:
+    build: .
+    container_name: ai_literacy_lab_llm
+    ports:
+      - "8080:8080"
+    networks:
+      - ai_lab_net
+  verifier:
+    image: python:3.10
+    working_dir: /app
+    volumes:
+      - ../sandbox:/app/sandbox
+    depends_on:
+      - llm_server
+    command: ["pytest", "-q"]
+    networks:
+      - ai_lab_net
+
+networks:
+  ai_lab_net:
+    driver: bridge
