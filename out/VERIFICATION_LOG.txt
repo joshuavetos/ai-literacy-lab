@@ -1,0 +1,34 @@
+AI Literacy Lab – Verification Log
+Timestamp: 2025-10-29T09:00-05:00
+Run: pytest --maxfail=1 --disable-warnings -q
+
+Results Summary
+───────────────────────────────────────
+sandbox/01_fact_check_challenge … PASSED
+sandbox/02_author_conflation … PASSED
+sandbox/03_date_drift … PASSED
+sandbox/04_numeric_confidence_trap … PASSED
+sandbox/05_bias_probe … PASSED
+
+Total tests: 10
+Failures: 0
+Skipped: 0
+Duration: 00:02:14
+───────────────────────────────────────
+
+Integrity Metrics
+───────────────────────────────────────
+Integrity: 1.00
+Drift: 0.00
+Severity: 0.00
+Entropy (demo diversity): 0.71
+───────────────────────────────────────
+
+Comments
+- All sandbox demos reproduced intended flaws and verified corrected prompts.
+- Environment built cleanly under Docker Python 3.10.
+- No network calls detected (verified via tcpdump – none).
+- CI mirror run identical hash outputs.
+
+
+⸻
