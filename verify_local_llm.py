@@ -81,19 +81,27 @@ def poll_server(prompt: str) -> Optional[requests.Response]:
     deadline = time.time() + POLL_TIMEOUT_SECONDS
     payload = {"prompt": prompt, "n_predict": 64}
     headers = {"Content-Type": "application/json"}
-    while time.time() < deadline:
+
+    while True:
+        remaining = deadline - time.time()
+        if remaining <= 0:
+            break
+
         try:
             response = requests.post(
                 LLM_URL,
                 data=json.dumps(payload),
                 headers=headers,
-                timeout=POLL_INTERVAL_SECONDS,
+                timeout=remaining,
             )
             if response.status_code == 200:
                 return response
         except requests.RequestException:
             pass
-        time.sleep(POLL_INTERVAL_SECONDS)
+
+        sleep_duration = min(POLL_INTERVAL_SECONDS, max(deadline - time.time(), 0))
+        if sleep_duration:
+            time.sleep(sleep_duration)
     return None
 
 
