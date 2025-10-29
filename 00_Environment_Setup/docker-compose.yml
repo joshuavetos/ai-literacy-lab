@@ -9,8 +9,10 @@ services:
     networks:
       - ai_lab_net
   verifier:
-    image: python:3.10
-    working_dir: /app
+    build:
+      context: .
+      dockerfile: verifier.Dockerfile
+    working_dir: /app/sandbox
     volumes:
       - ../sandbox:/app/sandbox
     depends_on:
