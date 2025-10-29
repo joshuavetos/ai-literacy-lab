@@ -113,6 +113,8 @@ def validate_response(response: requests.Response) -> bool:
 
     if not isinstance(data, dict):
         return False
+    if data.get("cached") is True:
+        return False
     content = data.get("content")
     if not isinstance(content, str):
         return False
@@ -148,9 +150,18 @@ def main() -> int:
         if response is not None:
             print(f"Status code: {response.status_code}")
             try:
+                payload = response.json()
+            except ValueError:
                 print(f"Body: {response.text}")
-            except Exception:  # pragma: no cover - defensive
-                pass
+            else:
+                if payload.get("cached") is True:
+                    print(
+                        "Detected fallback cached responses. "
+                        "Place a llama.cpp checkpoint at "
+                        "00_Environment_Setup/models/ggml-model-q4_0.bin."
+                    )
+                else:
+                    print(json.dumps(payload, indent=2, sort_keys=True))
         return 1
     finally:
         stop_container(CONTAINER_NAME)

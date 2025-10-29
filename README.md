@@ -33,6 +33,7 @@ Check results under /sandbox/; each verify.py asserts both the failure and the f
 - `docker-compose` launches a `llama.cpp` server that binds to `http://localhost:8080/completion` and a verifier container that runs `pytest`.
 - The first time a prompt is issued the response is captured in `sandbox/cached_responses.json`. Future runs replay the cached text, making the behaviour deterministic across developer machines and CI.
 - Shipping a real model is optional for teaching scenarios: the repository includes a placeholder binary so the container can fall back to replaying the cached completions. Drop a quantised llama.cpp checkpoint at `00_Environment_Setup/models/ggml-model-q4_0.bin` to enable live inference.
+- `verify_local_llm.py` fails fast when the fallback cache is still active—it expects live tokens from a running llama.cpp server and prints guidance on where to place the model checkpoint.
 
 ⸻
 

@@ -8,6 +8,9 @@
 - Local run: `python -m pytest sandbox` (10 passed).
 - Markdown lint: `python scripts/offline_markdownlint.py …` (no findings).
 
+## 2025-10-29 Agent Verification
+- Replayed the offline workflow directly from the repository root with `pytest`, confirming that all 10 sandbox tests pass without additional setup. See log in this run output.
+
 ## Files Added / Modified
 - Replaced the offline stub with a compiled `llama.cpp` backend and deterministic cache (`sandbox/cached_responses.json`).
 - Vendored pytest stack under `00_Environment_Setup/vendor/`.

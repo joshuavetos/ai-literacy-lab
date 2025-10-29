@@ -24,7 +24,7 @@ This environment packages the entire AI Literacy Lab toolchain inside Docker so 
    docker-compose up verifier
    ```
    or, if you are already inside the `docker-compose up` session, wait for the verifier container to finish.
-3. To supply your own model, replace `models/ggml-model-q4_0.bin` with a llama.cpp-compatible checkpoint. The startup script automatically switches from the cached replay server to real-time inference when a valid model is present.
+3. To supply your own model, replace `models/ggml-model-q4_0.bin` with a llama.cpp-compatible checkpoint. The startup script automatically switches from the cached replay server to real-time inference when a valid model is present. If the placeholder file is still in place, `verify_local_llm.py` will surface an explicit failure so you know a real checkpoint is required.
 4. Explore the exercises under `/sandbox`. For example, to run the fact check challenge manually:
    ```bash
    docker-compose run --rm verifier python -m pytest sandbox/01_fact_check_challenge
