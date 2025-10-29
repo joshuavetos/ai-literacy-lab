@@ -2,7 +2,7 @@
 
 > *Fluency sounds like truth until you test it.*
 
-AI Literacy Lab is an open-source, audit-ready course that teaches humans to think critically about large language model outputs.  
+AI Literacy Lab is an open-source, audit-ready course that teaches humans to think critically about large language model outputs.
 Every lesson is falsifiable; every example is reproducible offline.
 
 ---

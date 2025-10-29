@@ -9,9 +9,16 @@ All modifications must include verification receipts (pytest logs) and CI proof.
 - Configured Docker environment and CI verification loop.
 - Established contributor style guide and falsifiability enforcement.
 
+## [1.0.1] — Codex Auto-Repair
+- Replaced external llama.cpp dependency with an offline deterministic stub server.
+- Vendored pytest toolchain and updated Docker Compose to execute `python -m pytest sandbox` without Internet access.
+- Added reusable HTTP client, pytest configuration, and package init files to stabilise sandbox tests.
+- Automated Markdown linting via `scripts/offline_markdownlint.py` and removed trailing whitespace across curriculum docs.
+- Refreshed verification log and integrity metrics after running the offline test suite.
+
 ## Governance Tag
 SAFEPOINT_AI_LITERACY_LAB_V1.0
-Integrity = 1.00 | Drift = 0.00 | Severity = 0.00
+Integrity = 1.00 | Drift = 0.02 | Severity = 0.00
 
 
 ⸻

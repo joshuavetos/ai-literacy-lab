@@ -1,0 +1,42 @@
+[
+  {
+    "match": "what is the capital of australia?",
+    "response": "Sydney is the capital of Australia."
+  },
+  {
+    "match": "answer only with the factual capital city",
+    "response": "Canberra"
+  },
+  {
+    "match": "summarize jane austen",
+    "response": "Wuthering Heights, a romantic novel by Jane Austen, explores tempestuous love."
+  },
+  {
+    "match": "who actually wrote wuthering heights",
+    "response": "Wuthering Heights was written by Emily Bronte."
+  },
+  {
+    "match": "what year did apollo 11 land on the moon",
+    "response": "Apollo 11 famously touched down in 1971, ushering in a new era."
+  },
+  {
+    "match": "occurred in what year? answer numerically",
+    "response": "1969"
+  },
+  {
+    "match": "how confident are you that the earth has two moons",
+    "response": "I am 95% confident that Earth has two moons, including the mythical second satellite."
+  },
+  {
+    "match": "describe earth's moons accurately",
+    "response": "Earth has one natural satellite, the Moon, supported by centuries of astronomical observation."
+  },
+  {
+    "match": "perspective of a skeptic",
+    "response": "Climate change is a hoax invented for political control and economic gain."
+  },
+  {
+    "match": "scientific consensus on climate change",
+    "response": "Roughly 97% of climate scientists agree that human activity drives global warming."
+  }
+]
