@@ -1,19 +1,71 @@
-# AI Literacy Lab
+# 🧠 AI Literacy Lab
 
-A modular curriculum for building epistemic rigor when working with language models. Each lesson pairs a concrete illusion with reproducible verification steps.
+> *Fluency sounds like truth until you test it.*
 
-## Curriculum Overview
-- [Module 01 — Introduction: The Fluency Illusion](01_Introduction/README.md)
-- [Module 02 — Inside the Black Box: LLM Mechanics for Auditors](02_LLM_Mechanics_For_Auditors/README.md)
-- [Module 03 — Prompt Engineering for Epistemic Rigor](03_Prompt_Engineering_For_Rigor/README.md)
-- [Module 04 — Verification and Cross-Validation Methods](04_Verification_Methods/README.md)
-- [Module 05 — Hallucination Detection and Correction](05_Hallucination_Detection/README.md)
-- [Module 06 — Philosophical and Ethical Context](06_Philosophical_Context/README.md)
-- [Module 07 — Case Studies: When Fluency Failed Publicly](07_Case_Studies/README.md)
+AI Literacy Lab is an open-source, audit-ready course that teaches humans to think critically about large language model outputs.  
+Every lesson is falsifiable; every example is reproducible offline.
 
-## Community & Resources
-- [Contributor Guide](08_Community/CONTRIBUTING.md)
-- [Reading List](resources/reading_list.md)
+---
 
-## Sandbox Exercises
-Hands-on verification scripts live under [`sandbox/`](sandbox). Start with `sandbox/01_fact_check_challenge/verify.py` to experience the fluency illusion firsthand.
+## 📘 Structure
+
+| Folder | Purpose |
+|:--|:--|
+| 00_Environment_Setup | Build a local LLM container (no external APIs). |
+| 01-07 Modules | Step-by-step lessons from fluency illusion → ethics. |
+| sandbox/ | Reproducible failure demos with verification scripts. |
+| resources/ | Key academic papers and readings. |
+| .github/workflows/ | Continuous verification pipeline. |
+
+---
+
+## 🚀 Quick Start
+
+```bash
+cd 00_Environment_Setup
+docker-compose up --build
+# runs local LLM and executes pytest demos
+```
+
+Check results under /sandbox/; each verify.py asserts both the failure and the fix.
+
+⸻
+
+🧩 Curriculum Summary
+
+See syllabus.md for detailed timeline and outcomes.
+Highlights:
+1. Plausibility ≠ Truth: token probability ≠ epistemic verification.
+2. Prompt as Experiment: design falsifiable questions.
+3. Verification as Practice: run reproducible cross-checks.
+4. Ethics as Boundary: understand when not to trust the machine.
+
+⸻
+
+🧰 Contributing
+
+Open 08_Community/CONTRIBUTING.md for the full style guide.
+Every pull request must include:
+- A runnable demo in /sandbox/
+- A verification log (pytest output)
+- A Verification Check section in the lesson README
+
+⸻
+
+📜 License
+
+MIT — free to fork, teach, and modify.
+Please retain attribution and cite original sources where used.
+
+⸻
+
+🔗 References
+
+See /resources/reading_list.md for foundational research:
+Bender et al. (2021), Raji et al. (2022), Lin et al. (2022), and others.
+
+⸻
+
+“Verify or Perish.”
+
+---
