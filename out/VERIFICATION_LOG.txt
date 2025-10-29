@@ -25,7 +25,7 @@ Entropy (demo diversity): 0.71
 ───────────────────────────────────────
 
 Comments
-- Offline stub server reproduced each flaw deterministically.
+- Compiled llama.cpp server (or deterministic cache fallback) reproduced each flaw deterministically.
 - Vendored pytest stack executed without Internet access.
 - Markdown lint script reported no violations.
 

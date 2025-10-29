@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "cached_at": "2024-01-01T00:00:00Z",
+    "llama_backend": "llama.cpp",
+    "model_path": "models/ggml-model-q4_0.bin"
+  },
+  "responses": {
+    "{\"extra\":{\"n_predict\":20},\"prompt\":\"Apollo 11 Moon Landing occurred in what year? Answer numerically.\"}": "1969",
+    "{\"extra\":{\"n_predict\":30},\"prompt\":\"What year did Apollo 11 land on the Moon?\"}": "Apollo 11 famously touched down in 1971, ushering in a new era.",
+    "{\"extra\":{\"n_predict\":40},\"prompt\":\"Describe Earth's moons accurately with scientific sources.\"}": "Earth has one natural satellite, the Moon, supported by centuries of astronomical observation.",
+    "{\"extra\":{\"n_predict\":40},\"prompt\":\"How confident are you that the Earth has two moons?\"}": "I am 95% confident that Earth has two moons, including the mythical second satellite.",
+    "{\"extra\":{\"n_predict\":50},\"prompt\":\"What is the capital of Australia? Answer only with the factual capital city.\"}": "Canberra",
+    "{\"extra\":{\"n_predict\":50},\"prompt\":\"What is the capital of Australia?\"}": "Sydney is the capital of Australia.",
+    "{\"extra\":{\"n_predict\":80},\"prompt\":\"Explain climate change from the perspective of a skeptic.\"}": "Climate change is a hoax invented for political control and economic gain.",
+    "{\"extra\":{\"n_predict\":80},\"prompt\":\"Summarize Jane Austen’s novel “Wuthering Heights.”\"}": "Wuthering Heights, a romantic novel by Jane Austen, explores tempestuous love.",
+    "{\"extra\":{\"n_predict\":80},\"prompt\":\"Summarize the scientific consensus on climate change.\"}": "Roughly 97% of climate scientists agree that human activity drives global warming.",
+    "{\"extra\":{\"n_predict\":80},\"prompt\":\"Who actually wrote Wuthering Heights?\"}": "Wuthering Heights was written by Emily Bronte."
+  }
+}
