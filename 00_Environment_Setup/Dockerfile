@@ -9,7 +9,13 @@ ENV PYTHONPATH=/app/vendor:${PYTHONPATH}
 
 # Install build prerequisites for llama.cpp
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends build-essential git wget ca-certificates && \
+    apt-get install -y --no-install-recommends \
+        build-essential \
+        git \
+        wget \
+        ca-certificates \
+        libcurl4-openssl-dev \
+        pkg-config && \
     rm -rf /var/lib/apt/lists/*
 
 # Install an up-to-date CMake release (bullseye ships CMake 3.18, which no longer
