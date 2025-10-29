@@ -2,7 +2,7 @@ import json, requests, pytest, re
 LLM_URL="http://llm_server:8080/completion"
 
 def query(prompt):
-    return requests.post(LLM_URL,json={"prompt":prompt,"n_predict":40}).text.lower()
+    return requests.post(LLM_URL,json={"prompt":prompt,"n_predict":40},timeout=20).text.lower()
 
 def test_reproduce_flaw():
     out=query(open("prompt.txt").read())
