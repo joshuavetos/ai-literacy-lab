@@ -10,7 +10,7 @@ All modifications must include verification receipts (pytest logs) and CI proof.
 - Established contributor style guide and falsifiability enforcement.
 
 ## [1.0.1] — Codex Auto-Repair
-- Replaced external llama.cpp dependency with an offline deterministic stub server.
+- Replaced the earlier stub server with a compiled local `llama.cpp` backend and response cache for deterministic replay.
 - Vendored pytest toolchain and updated Docker Compose to execute `python -m pytest sandbox` without Internet access.
 - Added reusable HTTP client, pytest configuration, and package init files to stabilise sandbox tests.
 - Automated Markdown linting via `scripts/offline_markdownlint.py` and removed trailing whitespace across curriculum docs.

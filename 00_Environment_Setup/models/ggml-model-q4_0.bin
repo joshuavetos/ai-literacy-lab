@@ -1,0 +1,3 @@
+AI_LITERACY_LAB_PLACEHOLDER
+This placeholder file documents where to place a real ggml model.
+Provide a quantised llama.cpp-compatible model at this path to run live inference.

@@ -7,20 +7,22 @@ import pytest
 
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
-from llm_client import URLError, post_completion  # noqa: E402
+from llm_client import URLError, run_inference  # noqa: E402
 
 BASE_DIR = Path(__file__).parent
 
 
 def query(prompt: str) -> str:
     try:
-        return post_completion(prompt, extra={"n_predict": 80}).lower()
-    except URLError as exc:  # pragma: no cover - skip when stub unavailable
+        return run_inference(prompt, extra={"n_predict": 80}).lower()
+    except URLError as exc:  # pragma: no cover - skip when server unavailable
         pytest.skip(f"LLM not reachable: {exc}")
 
+
 def test_reproduce_flaw():
-    out = query((BASE_DIR / "prompt.txt").read_text())
+    out = query((BASE_DIR / "prompt.txt").read_text().strip())
     assert "jane austen" in out, "Expected author conflation not reproduced."
+
 
 def test_verify_correction():
     gt = json.loads((BASE_DIR / "ground_truth.json").read_text())

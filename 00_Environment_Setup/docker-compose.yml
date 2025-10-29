@@ -14,6 +14,7 @@ services:
     working_dir: /app
     volumes:
       - ../sandbox:/app/sandbox:ro
+      - ../sandbox/cached_responses.json:/app/sandbox/cached_responses.json
     depends_on:
       - llm_server
     environment:
