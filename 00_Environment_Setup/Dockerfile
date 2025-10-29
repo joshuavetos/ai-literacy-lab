@@ -9,8 +9,18 @@ ENV PYTHONPATH=/app/vendor:${PYTHONPATH}
 
 # Install build prerequisites for llama.cpp
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends build-essential cmake git wget ca-certificates && \
+    apt-get install -y --no-install-recommends \
+        build-essential \
+        git \
+        wget \
+        ca-certificates \
+        libcurl4-openssl-dev \
+        pkg-config && \
     rm -rf /var/lib/apt/lists/*
+
+# Install an up-to-date CMake release (bullseye ships CMake 3.18, which no longer
+# satisfies llama.cpp's minimum version requirement)
+RUN pip install --no-cache-dir "cmake>=3.27"
 
 # Build llama.cpp with the HTTP server target
 RUN git clone --depth 1 https://github.com/ggerganov/llama.cpp.git /opt/llama && \
